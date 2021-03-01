@@ -1,0 +1,8 @@
+{
+    "less.compile": {
+
+         "outExt": ".wxss"
+        
+        },
+        "explorer.compactFolders": false
+}

@@ -1,0 +1,56 @@
+<!-- 1 页面加载的时候
+        1 从缓存中获取购物车数据 渲染到页面中
+          这些数据必须满足 checked=true;
+-->
+<!-- 收货地址 -->
+<view class="recive_adress_row">
+
+    <view class="user_info_row">
+        <view class="user_info">
+            <view>{{adress.userName}}</view>
+            <view>{{adress.all}}</view>
+        </view>
+        <view class="user_phone">{{adress.telNumber}}</view>
+    </view>
+</view>
+<!-- 购物车 -->
+<view class="cart_content">
+    <view class="cart_title">购物车</view>
+    <view class="cart_main">
+        <!-- 当cart数组 长度不为0 显示商品信息 -->
+        
+            <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+                <!-- 商品图片 -->
+                <navigator class="cart_img_wrap">
+                    <image mode="widthFix" src="{{item.goods_small_logo}}"></image>
+                </navigator>
+                <!-- 商品信息 -->
+                <view class="cart_info_wrap">
+                    <view class="goods_name">{{item.goods_name}}</view>
+                    <view class="goods_price_wrap">
+                        <view class="goods-price">¥ {{item.goods_price}}</view>
+                        <view class="cart_num_tool">
+                        
+                            <view class="goods_num">X{{item.num}}</view>
+
+                        </view>
+                    </view>
+                </view>
+            </view>
+        
+    </view>
+</view>
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+
+    <!-- 总价格 -->
+    <view class="total_price_wrap">
+        <view class="total_price">
+            合计:
+            <text class="total_price_text">¥{{totalPrice}}</text>
+        </view>
+        <view>包含运费</view>
+    </view>
+    <!-- 支付 -->
+    <view class="order_pay_wrap" bindtap="handleOrderPay" >支付({{totalNum}})</view>
+</view>
