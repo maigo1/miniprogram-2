@@ -2,3 +2,6 @@
  <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
     
  </Tabs>
+ <view class="" hover-class="none" hover-stop-propagation="false">
+     内容
+ </view>
