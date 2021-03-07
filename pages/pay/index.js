@@ -59,7 +59,10 @@ Page({
   async handleOrderPay(){
     try {
       //1 判断缓存中有没有token
+      wx.setStorageSync('token', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIzLCJpYXQiOjE1NjQ3MzAwNzksImV4cCI6MTAwMTU2NDczMDA3OH0.YPt-XeLnjV-_1ITaXGY2FhxmCe4NvXuRnRB8OMCfnPo');
+
       const token=wx.getStorageSync("token");
+
       //2 判断
       if(!token){
         wx.navigateTo({
